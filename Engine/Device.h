@@ -1,7 +1,7 @@
 #pragma once
 
 
-// 인력 사무소  = GPU와 티키타카를 할 상수
+// 인력 사무소
 class Device
 {
 public:

@@ -11,7 +11,7 @@
 #include <map>
 using namespace std;
 
-#include "d3dx12.h"  //비공식 마소 다렉라이브러리(타이핑을 편리하게 넣은것)
+#include "d3dx12.h"
 #include <d3d12.h>
 #include <wrl.h>
 #include <d3dcompiler.h>
@@ -23,10 +23,6 @@ using namespace DirectX;
 using namespace DirectX::PackedVector;
 using namespace Microsoft::WRL;
 
-
-// 각종 lib
-
-// 각종 typedef
 // 각종 lib
 #pragma comment(lib, "d3d12")
 #pragma comment(lib, "dxgi")
@@ -59,5 +55,15 @@ struct WindowInfo
 	int32	height; // 높이
 	bool	windowed; // 창모드 or 전체화면
 };
+
+struct Vertex
+{
+	Vec3 pos;
+	Vec4 color;
+};
+
+#define DEVICE			GEngine->GetDevice()->GetDevice()
+#define CMD_LIST		GEngine->GetCmdQueue()->GetCmdList()
+#define ROOT_SIGNATURE	GEngine->GetRootSignature()->GetSignature()
 
 extern unique_ptr<class Engine> GEngine;
