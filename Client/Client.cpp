@@ -4,6 +4,8 @@
 #include "framework.h"
 #include "Client.h"
 #include "Game.h"
+#include "Timer.h"
+#include <../Engine/EngineEditorGUI.h>
 
 #define MAX_LOADSTRING 100
 
@@ -49,8 +51,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     GWindowInfo.height = 600;
     GWindowInfo.windowed = true;
 
+
     unique_ptr<Game> game = make_unique<Game>();
     game->Init(GWindowInfo);
+    UEngineEditorGUI::GUIInit();
 
     // 기본 메시지 루프입니다:
     while (true)
@@ -69,8 +73,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 		// TODO
         game->Update();
+        UEngineEditorGUI::GUIRender(GET_SINGLE(Timer)->GetDeltaTime());
+        //UEngineEditorGUI::GUIRender();
     }
 
+    UEngineEditorGUI::GUIRelease();
     return (int) msg.wParam;
 }
 
