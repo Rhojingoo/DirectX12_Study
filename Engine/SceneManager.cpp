@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "SceneManager.h"
 #include "Scene.h"
-
+#include "Timer.h"
 #include "Engine.h"
 #include "Material.h"
 #include "GameObject.h"
@@ -17,6 +17,7 @@
 #include "SphereCollider.h"
 #include "MeshData.h"
 #include "TestDragon.h"
+#include "EngineEditorGUI.h"
 
 void SceneManager::Update()
 {
@@ -32,7 +33,11 @@ void SceneManager::Update()
 void SceneManager::Render()
 {
 	if (_activeScene)
+	{
 		_activeScene->Render();
+		UEngineEditorGUI::GUIRender(_activeScene.get(), GET_SINGLE(Timer)->GetDeltaTime());
+	}
+
 }
 
 void SceneManager::LoadScene(wstring sceneName)
@@ -114,6 +119,9 @@ shared_ptr<GameObject> SceneManager::Pick(int32 screenX, int32 screenY)
 
 	return picked;
 }
+
+
+
 shared_ptr<Scene> SceneManager::LoadTestScene()
 {
 #pragma region LayerMask
@@ -173,6 +181,7 @@ shared_ptr<Scene> SceneManager::LoadTestScene()
 	}
 #pragma endregion
 
+
 #pragma region SkyBox
 	{
 		shared_ptr<GameObject> skybox = make_shared<GameObject>();
@@ -185,7 +194,7 @@ shared_ptr<Scene> SceneManager::LoadTestScene()
 		}
 		{
 			shared_ptr<Shader> shader = GET_SINGLE(Resources)->Get<Shader>(L"Skybox");
-			shared_ptr<Texture> texture = GET_SINGLE(Resources)->Load<Texture>(L"Sky01", L"..\\Resources\\Texture\\Sky01.jpg");
+			shared_ptr<Texture> texture = GET_SINGLE(Resources)->Load<Texture>(L"Sky01", L"..\\Resources\\Texture\\Sky02.jpg");
 			shared_ptr<Material> material = make_shared<Material>();
 			material->SetShader(shader);
 			material->SetTexture(0, texture);

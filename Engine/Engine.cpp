@@ -9,6 +9,11 @@
 #include "Resources.h"
 #include "InstancingManager.h"
 
+#include "imgui.h"
+#include "imgui_impl_win32.h"
+#include "imgui_impl_dx12.h"
+
+
 void Engine::Init(const WindowInfo& info)
 {
 	_window = info;	
@@ -36,6 +41,24 @@ void Engine::Init(const WindowInfo& info)
 	GET_SINGLE(Input)->Init(info.hwnd);
 	GET_SINGLE(Timer)->Init();
 	GET_SINGLE(Resources)->Init();
+
+	// Setup Dear ImGui context
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	//ImGuiIO& io = ImGui::GetIO(); (void)io;
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+
+	//// Setup Dear ImGui style
+	//ImGui::StyleColorsDark();
+	////ImGui::StyleColorsLight();
+
+	//// Setup Platform/Renderer backends
+	//ImGui_ImplWin32_Init(info.hwnd);
+	//ImGui_ImplDX12_Init(_device->GetDevice().Get(), 2,
+	//	DXGI_FORMAT_R8G8B8A8_UNORM, _graphicsDescHeap->GetDescriptorHeap().Get(),
+	//	_graphicsDescHeap->GetDescriptorHeap()->GetCPUDescriptorHandleForHeapStart(),
+	//	_graphicsDescHeap->GetDescriptorHeap()->GetGPUDescriptorHandleForHeapStart());
 }
 
 void Engine::Update()

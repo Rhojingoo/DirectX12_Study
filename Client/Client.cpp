@@ -5,7 +5,6 @@
 #include "Client.h"
 #include "Game.h"
 #include "Timer.h"
-#include <../Engine/EngineEditorGUI.h>
 
 #define MAX_LOADSTRING 100
 
@@ -21,6 +20,8 @@ ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+
+
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -46,19 +47,19 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_CLIENT));
 
     MSG msg;
-
-    GWindowInfo.width = 800;
-    GWindowInfo.height = 600;
+    GWindowInfo.width = 1280;
+    GWindowInfo.height = 800;
     GWindowInfo.windowed = true;
-
 
     unique_ptr<Game> game = make_unique<Game>();
     game->Init(GWindowInfo);
-    UEngineEditorGUI::GUIInit();
+     
 
     // 기본 메시지 루프입니다:
     while (true)
     {
+        
+
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
             if (msg.message == WM_QUIT)
@@ -70,14 +71,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 				DispatchMessage(&msg);
 			}
         }
+        game->Update();      
+    }  
 
-		// TODO
-        game->Update();
-        UEngineEditorGUI::GUIRender(GET_SINGLE(Timer)->GetDeltaTime());
-        //UEngineEditorGUI::GUIRender();
-    }
-
-    UEngineEditorGUI::GUIRelease();
     return (int) msg.wParam;
 }
 
@@ -206,3 +202,5 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     }
     return (INT_PTR)FALSE;
 }
+
+

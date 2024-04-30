@@ -18,11 +18,11 @@ public:
 	GameObject();
 	virtual ~GameObject();
 
-	void Awake();
-	void Start();
-	void Update();
-	void LateUpdate();
-	void FinalUpdate();
+	virtual void Awake();
+	virtual void Start();
+	virtual void Update();
+	virtual void LateUpdate();
+	virtual void FinalUpdate();
 
 	shared_ptr<Component> GetFixedComponent(COMPONENT_TYPE type);
 
