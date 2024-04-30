@@ -41,6 +41,7 @@ void Dragon::Awake()
 		GET_SINGLE(SceneManager)->GetActiveScene()->AddGameObject(gameObject);
 		gameObject->AddComponent(make_shared<TestDragon>());
 	}
+	UEngineEditorGUI::CreateEditorWindow<TestDragon>("Dragon_Animation");
 }
 
 void Dragon::Start()

@@ -28,7 +28,7 @@ void UEngineEditorGUI::GUIInit()
 {
     WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr, L"ImGui Example", nullptr };
     ::RegisterClassExW(&wc);
-    hwnd = ::CreateWindowW(wc.lpszClassName, L"ImGui_TEST_DirectX12", WS_OVERLAPPEDWINDOW, 100, 100, 1280, 720, nullptr, nullptr, wc.hInstance, nullptr);
+    hwnd = ::CreateWindowW(wc.lpszClassName, L"ImGui_TEST_DirectX12", WS_OVERLAPPEDWINDOW, 0, 0, 10, 10, nullptr, nullptr, wc.hInstance, nullptr);
 
     // Initialize Direct3D
     if (!CreateDeviceD3D(hwnd))
@@ -37,7 +37,8 @@ void UEngineEditorGUI::GUIInit()
         ::UnregisterClassW(wc.lpszClassName, wc.hInstance);
         return;
     }
-
+    ::ShowWindow(hwnd, SW_SHOWDEFAULT);
+    ::UpdateWindow(hwnd);
     // Show the window
     ::ShowWindow(hwnd, SW_SHOWDEFAULT);
     ::UpdateWindow(hwnd);
@@ -71,8 +72,6 @@ void UEngineEditorGUI::GUIInit()
         DXGI_FORMAT_R8G8B8A8_UNORM, g_pd3dSrvDescHeap,
         g_pd3dSrvDescHeap->GetCPUDescriptorHandleForHeapStart(),
         g_pd3dSrvDescHeap->GetGPUDescriptorHandleForHeapStart());
-
-
 }
 
 void UEngineEditorGUI::GUIRelease()
