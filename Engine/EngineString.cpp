@@ -1,7 +1,7 @@
-#include "PreCompile.h"
+#include "pch.h"
 #include "EngineString.h"
 #include <Windows.h>
-#include "EngineDebug.h"
+
 
 UEngineString::UEngineString() 
 {
@@ -43,7 +43,7 @@ std::wstring UEngineString::AnsiToUniCode(std::string_view _View)
 
 	if (0 == Size)
 	{
-		MsgBoxAssert("문자열 변환에 실패했거나 크기가 0인 문자열을 넣어줬습니다");
+		//MsgBoxAssert("문자열 변환에 실패했거나 크기가 0인 문자열을 넣어줬습니다");
 		return L"";
 	}
 
@@ -62,7 +62,7 @@ std::wstring UEngineString::AnsiToUniCode(std::string_view _View)
 
 	if (0 == Size)
 	{
-		MsgBoxAssert("문자열 변환에 실패했거나 크기가 0인 문자열을 넣어줬습니다");
+		//MsgBoxAssert("문자열 변환에 실패했거나 크기가 0인 문자열을 넣어줬습니다");
 		return L"";
 	}
 

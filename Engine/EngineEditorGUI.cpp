@@ -12,6 +12,9 @@
 ImGuiIO* UEngineEditorGUI::IOPtr = nullptr;
 HWND UEngineEditorGUI::hwnd;
 
+std::map<std::string, std::shared_ptr<UEngineEditorWindow>> UEngineEditorGUI::EditorWindows;
+
+
 UEngineEditorGUI::UEngineEditorGUI() 
 {
 }
@@ -25,7 +28,7 @@ void UEngineEditorGUI::GUIInit()
 {
     WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr, L"ImGui Example", nullptr };
     ::RegisterClassExW(&wc);
-    hwnd = ::CreateWindowW(wc.lpszClassName, L"ImGui_TEST_DirectX12", WS_OVERLAPPEDWINDOW, 100, 100, 1280, 800, nullptr, nullptr, wc.hInstance, nullptr);
+    hwnd = ::CreateWindowW(wc.lpszClassName, L"ImGui_TEST_DirectX12", WS_OVERLAPPEDWINDOW, 100, 100, 1280, 720, nullptr, nullptr, wc.hInstance, nullptr);
 
     // Initialize Direct3D
     if (!CreateDeviceD3D(hwnd))
@@ -97,6 +100,12 @@ void UEngineEditorGUI::GUIRelease()
     }
 }
 
+void UEngineEditorGUI::WindowInit(std::shared_ptr<UEngineEditorWindow> _Window, std::string_view _Name)
+{
+    _Window->SetName(_Name);
+    _Window->Init();
+}
+
 
 void UEngineEditorGUI::GUIRender(Scene* _scene, float _DeltaTime)
 {
@@ -106,9 +115,8 @@ void UEngineEditorGUI::GUIRender(Scene* _scene, float _DeltaTime)
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
 
-    if (show_demo_window)
-        ImGui::ShowDemoWindow(&show_demo_window);
-
+    //if (show_demo_window)
+    //    ImGui::ShowDemoWindow(&show_demo_window);
     {
         static float f = 0.0f;
         static int counter = 0;

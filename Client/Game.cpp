@@ -13,14 +13,15 @@ void Game::Init(const WindowInfo& info)
 
 	UEngineEditorGUI::GUIInit();
 
-	GET_SINGLE(SceneManager)->LoadScene(L"TestScene");
+	GET_SINGLE(SceneManager)->Init();
+	
 }
 
 void Game::Update()
 {
 	GEngine->Update();
-	UEngineEditorGUI::GUIRender(GET_SINGLE(Timer)->GetDeltaTime());
 }
+	
 
 void Game::End()
 {

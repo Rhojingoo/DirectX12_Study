@@ -177,8 +177,10 @@
     <ClInclude Include="CommandQueue.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ConstantBuffer.h" />
+    <ClInclude Include="ContentsGUI.h" />
     <ClInclude Include="d3dx12.h" />
     <ClInclude Include="Device.h" />
+    <ClInclude Include="Direction_Light.h" />
     <ClInclude Include="Dragon.h">
       <SubType>
       </SubType>
@@ -219,6 +221,10 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="SimpleMath.h" />
+    <ClInclude Include="SkyBox.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="StructuredBuffer.h" />
     <ClInclude Include="SwapChain.h" />
@@ -226,6 +232,10 @@
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="TestCameraScript.h" />
     <ClInclude Include="TestDragon.h" />
+    <ClInclude Include="TestPlay_Scene.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h" />
@@ -237,7 +247,9 @@
     <ClCompile Include="CommandQueue.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ConstantBuffer.cpp" />
+    <ClCompile Include="ContentsGUI.cpp" />
     <ClCompile Include="Device.cpp" />
+    <ClCompile Include="Direction_Light.cpp" />
     <ClCompile Include="Dragon.cpp">
       <SubType>
       </SubType>
@@ -282,6 +294,10 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="SimpleMath.cpp" />
+    <ClCompile Include="SkyBox.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="StructuredBuffer.cpp" />
     <ClCompile Include="SwapChain.cpp" />
@@ -289,6 +305,10 @@
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="TestCameraScript.cpp" />
     <ClCompile Include="TestDragon.cpp" />
+    <ClCompile Include="TestPlay_Scene.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Transform.cpp" />

@@ -1,19 +1,17 @@
 #include "pch.h"
+#include "Engine.h"
 #include "Scene.h"
 #include "GameObject.h"
 #include "Camera.h"
-#include "Engine.h"
-#include "ConstantBuffer.h"
-#include "Light.h"
-#include "Engine.h"
 #include "Resources.h"
+
 
 void Scene::Awake()
 {
-	for (const shared_ptr<GameObject>& gameObject : _gameObjects)
-	{
-		gameObject->Awake();
-	}
+	//for (const shared_ptr<GameObject>& gameObject : _gameObjects)
+	//{
+	//	gameObject->Awake();
+	//}
 }
 
 void Scene::Start()
@@ -174,6 +172,8 @@ void Scene::PushLightData()
 
 void Scene::AddGameObject(shared_ptr<GameObject> gameObject)
 {
+	gameObject->Awake();
+
 	if (gameObject->GetCamera() != nullptr)
 	{
 		_cameras.push_back(gameObject->GetCamera());
@@ -204,4 +204,24 @@ void Scene::RemoveGameObject(shared_ptr<GameObject> gameObject)
 	auto findIt = std::find(_gameObjects.begin(), _gameObjects.end(), gameObject);
 	if (findIt != _gameObjects.end())
 		_gameObjects.erase(findIt);
+}
+
+
+void Scene::SetLayerName(uint8 index, const wstring& name)
+{
+	// 기존 데이터 삭제
+	const wstring& prevName = _layerNames[index];
+	_layerIndex.erase(prevName);
+
+	_layerNames[index] = name;
+	_layerIndex[name] = index;
+}
+
+uint8 Scene::LayerNameToIndex(const wstring& name)
+{
+	auto findIt = _layerIndex.find(name);
+	if (findIt == _layerIndex.end())
+		return 0;
+
+	return findIt->second;
 }

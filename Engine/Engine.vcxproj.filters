@@ -25,33 +25,63 @@
     <Filter Include="Object\Component\Collider">
       <UniqueIdentifier>{054eccde-e1ba-451d-925b-5547022cbf4e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Imgui">
-      <UniqueIdentifier>{b92b947b-6996-4642-b162-89488795cfbf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\OBJ">
       <UniqueIdentifier>{1cfe4b64-4ca1-4958-b16f-73f8ae1985c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GraphicDevice">
+      <UniqueIdentifier>{d54a8b3b-15b0-4b98-9295-d89aa6d4343b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Imgui">
+      <UniqueIdentifier>{b92b947b-6996-4642-b162-89488795cfbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Imgui\Base">
+      <UniqueIdentifier>{a5c9c187-13cc-4a5a-9044-1edff7caa656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Imgui\Use">
+      <UniqueIdentifier>{92ff9743-f98e-47e9-aff5-3c3444a37aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Dx">
+      <UniqueIdentifier>{0dffa7cc-89aa-4aee-9f73-358e534f5111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Math">
+      <UniqueIdentifier>{93f816c1-8367-4d3b-8395-611d951a15a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\FBX">
+      <UniqueIdentifier>{32dcaea9-26cd-48e6-836d-1ea1e25d7d03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\PCH">
+      <UniqueIdentifier>{b8a09662-fe51-4802-a835-edb97643925f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\OBJ\Dragon">
+      <UniqueIdentifier>{b0a9e024-cb09-4deb-ba13-d245f2c878b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\OBJ\CAMERA">
+      <UniqueIdentifier>{ab5b1295-8cb8-4aa3-85b8-262b015e0b14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene">
+      <UniqueIdentifier>{a1423834-2f35-4b68-bc59-945744811439}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Input">
+      <UniqueIdentifier>{f32bc0d4-59da-43ff-a4b7-90b173a4125a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Timer">
+      <UniqueIdentifier>{c11cca1f-fc88-4f17-b88e-caedc095f1fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene\TestPlayScene">
+      <UniqueIdentifier>{38168eff-31d5-48f7-ad83-d5cc9e81fe6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene\Base">
+      <UniqueIdentifier>{e92064d4-dc2b-4330-b71f-71de2cc5a039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\OBJ\SkyBox">
+      <UniqueIdentifier>{01588fbf-7da7-4a0f-b62d-4a3fa3b8dd90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\OBJ\Light_Direction">
+      <UniqueIdentifier>{27e2dbed-7cc2-495b-8194-9d2194de3c1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="EnginePch.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Engine.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="CommandQueue.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Device.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="SwapChain.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="RootSignature.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
@@ -59,12 +89,6 @@
     </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Object\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="ConstantBuffer.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="TableDescriptorHeap.cpp">
-      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Object\Resource</Filter>
@@ -77,21 +101,6 @@
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleMath.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="TestCameraScript.cpp">
-      <Filter>Object\OBJ</Filter>
     </ClCompile>
     <ClCompile Include="Resources.cpp">
       <Filter>Manager</Filter>
@@ -120,17 +129,8 @@
     <ClCompile Include="Frustum.cpp">
       <Filter>Object\Component</Filter>
     </ClCompile>
-    <ClCompile Include="RenderTargetGroup.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>Object\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="StructuredBuffer.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="InstancingBuffer.cpp">
-      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="InstancingManager.cpp">
       <Filter>Manager</Filter>
@@ -144,70 +144,115 @@
     <ClCompile Include="SphereCollider.cpp">
       <Filter>Object\Component\Collider</Filter>
     </ClCompile>
-    <ClCompile Include="FBXLoader.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="MeshData.cpp">
       <Filter>Object\Resource</Filter>
     </ClCompile>
     <ClCompile Include="Animator.cpp">
       <Filter>Object\Component</Filter>
     </ClCompile>
-    <ClCompile Include="TestDragon.cpp">
-      <Filter>Object\OBJ</Filter>
+    <ClCompile Include="CommandQueue.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
     </ClCompile>
-    <ClCompile Include="EngineEditorGUI.cpp" />
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="InstancingBuffer.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTargetGroup.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="RootSignature.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuredBuffer.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="SwapChain.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="TableDescriptorHeap.cpp">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClCompile>
     <ClCompile Include="imgui.cpp">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClCompile>
     <ClCompile Include="imgui_demo.cpp">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClCompile>
     <ClCompile Include="imgui_draw.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_tables.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_widgets.cpp">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClCompile>
     <ClCompile Include="imgui_impl_dx12.cpp">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClCompile>
     <ClCompile Include="imgui_impl_win32.cpp">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClCompile>
-    <ClCompile Include="EngineEditorWindow.cpp" />
-    <ClCompile Include="NameObject.cpp" />
-    <ClCompile Include="EngineString.cpp" />
+    <ClCompile Include="imgui_tables.cpp">
+      <Filter>Utils\Imgui\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_widgets.cpp">
+      <Filter>Utils\Imgui\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineEditorWindow.cpp">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineString.cpp">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClCompile>
+    <ClCompile Include="NameObject.cpp">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineEditorGUI.cpp">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleMath.cpp">
+      <Filter>Utils\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="FBXLoader.cpp">
+      <Filter>Utils\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="EnginePch.cpp">
+      <Filter>Utils\PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Utils\PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDragon.cpp">
+      <Filter>Object\OBJ\Dragon</Filter>
+    </ClCompile>
     <ClCompile Include="Dragon.cpp">
-      <Filter>Object\OBJ</Filter>
+      <Filter>Object\OBJ\Dragon</Filter>
     </ClCompile>
+    <ClCompile Include="TestCameraScript.cpp">
+      <Filter>Object\OBJ\CAMERA</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Manager\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Manager\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Engine\Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TestPlay_Scene.cpp">
+      <Filter>Engine\Scene\TestPlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>Object\OBJ\SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Direction_Light.cpp">
+      <Filter>Object\OBJ\Light_Direction</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentsGUI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="EnginePch.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="d3dx12.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Engine.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandQueue.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Device.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="SwapChain.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="RootSignature.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
@@ -215,12 +260,6 @@
     </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>Object\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstantBuffer.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="TableDescriptorHeap.h">
-      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Object\Resource</Filter>
@@ -233,21 +272,6 @@
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="SimpleMath.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="TestCameraScript.h">
-      <Filter>Object\OBJ</Filter>
     </ClInclude>
     <ClInclude Include="Resources.h">
       <Filter>Manager</Filter>
@@ -276,17 +300,8 @@
     <ClInclude Include="Frustum.h">
       <Filter>Object\Component</Filter>
     </ClInclude>
-    <ClInclude Include="RenderTargetGroup.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
     <ClInclude Include="ParticleSystem.h">
       <Filter>Object\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="StructuredBuffer.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="InstancingBuffer.h">
-      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="InstancingManager.h">
       <Filter>Manager</Filter>
@@ -300,54 +315,118 @@
     <ClInclude Include="SphereCollider.h">
       <Filter>Object\Component\Collider</Filter>
     </ClInclude>
-    <ClInclude Include="FBXLoader.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="MeshData.h">
       <Filter>Object\Resource</Filter>
     </ClInclude>
     <ClInclude Include="Animator.h">
       <Filter>Object\Component</Filter>
     </ClInclude>
-    <ClInclude Include="TestDragon.h">
-      <Filter>Object\OBJ</Filter>
+    <ClInclude Include="CommandQueue.h">
+      <Filter>Engine\GraphicDevice</Filter>
     </ClInclude>
-    <ClInclude Include="EngineEditorGUI.h" />
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="InstancingBuffer.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTargetGroup.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="RootSignature.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="StructuredBuffer.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="SwapChain.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="TableDescriptorHeap.h">
+      <Filter>Engine\GraphicDevice</Filter>
+    </ClInclude>
     <ClInclude Include="imconfig.h">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClInclude>
     <ClInclude Include="imgui.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui_internal.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imstb_rectpack.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imstb_textedit.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imstb_truetype.h">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClInclude>
     <ClInclude Include="imgui_impl_dx12.h">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClInclude>
     <ClInclude Include="imgui_impl_win32.h">
-      <Filter>Imgui</Filter>
+      <Filter>Utils\Imgui\Base</Filter>
     </ClInclude>
-    <ClInclude Include="EngineEditorWindow.h" />
-    <ClInclude Include="NameObject.h" />
-    <ClInclude Include="EngineString.h" />
+    <ClInclude Include="imgui_internal.h">
+      <Filter>Utils\Imgui\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_rectpack.h">
+      <Filter>Utils\Imgui\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_textedit.h">
+      <Filter>Utils\Imgui\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_truetype.h">
+      <Filter>Utils\Imgui\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="NameObject.h">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineEditorGUI.h">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineEditorWindow.h">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineString.h">
+      <Filter>Utils\Imgui\Use</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dx12.h">
+      <Filter>Utils\Dx</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleMath.h">
+      <Filter>Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="FBXLoader.h">
+      <Filter>Utils\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Utils\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="EnginePch.h">
+      <Filter>Utils\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="TestDragon.h">
+      <Filter>Object\OBJ\Dragon</Filter>
+    </ClInclude>
     <ClInclude Include="Dragon.h">
-      <Filter>Object\OBJ</Filter>
+      <Filter>Object\OBJ\Dragon</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SimpleMath.inl">
-      <Filter>Utils</Filter>
-    </None>
+    <ClInclude Include="TestCameraScript.h">
+      <Filter>Object\OBJ\CAMERA</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Manager\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Manager\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Engine\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TestPlay_Scene.h">
+      <Filter>Engine\Scene\TestPlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>Object\OBJ\SkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction_Light.h">
+      <Filter>Object\OBJ\Light_Direction</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentsGUI.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Resources\Shader\params.fx">
@@ -389,5 +468,10 @@
     <FxCompile Include="..\Resources\Shader\math.fx">
       <Filter>Shader</Filter>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SimpleMath.inl">
+      <Filter>Utils\Math</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,32 +1,35 @@
 #pragma once
+#include "GameObject.h"
+#include "Camera.h"
+#include "Light.h"
 
-class GameObject;
-
+enum
+{
+	MAX_LAYER = 32
+};
 
 class Scene
 {
 public:
-	void Awake();
-	void Start();
-	void Update();
-	void LateUpdate();
-	void FinalUpdate();
+	virtual void Awake();
+	virtual void Start();
+	virtual void Update();
+	virtual void LateUpdate();
+	virtual void FinalUpdate();
 
-	shared_ptr<class Camera> GetMainCamera();
+	shared_ptr<Camera> GetMainCamera();
 
-	void Render();
+	virtual void Render();
+	virtual void ClearRTV();
+	virtual void RenderShadow();
+	virtual void RenderDeferred();
+	virtual void RenderLights();
+	virtual void RenderFinal();
 
-	void ClearRTV();
-
-	void RenderShadow();
-	void RenderDeferred();
-	void RenderLights();
-	void RenderFinal();
-
-	void RenderForward();
+	virtual void RenderForward();
 
 private:
-	void PushLightData();
+	virtual void PushLightData();
 
 public:
 	void AddGameObject(shared_ptr<GameObject> gameObject);
@@ -34,9 +37,16 @@ public:
 
 	const vector<shared_ptr<GameObject>>& GetGameObjects() { return _gameObjects; }
 
+	void SetLayerName(uint8 index, const wstring& name);
+	const wstring& IndexToLayerName(uint8 index) { return _layerNames[index]; }
+	uint8 LayerNameToIndex(const wstring& name);
+
 private:
 	vector<shared_ptr<GameObject>>		_gameObjects;
-	vector<shared_ptr<class Camera>>	_cameras;
-	vector<shared_ptr<class Light>>		_lights;
+	vector<shared_ptr<Camera>>			_cameras;
+	vector<shared_ptr< Light>>			_lights;
+
+	array<wstring, MAX_LAYER> _layerNames;
+	map<wstring, uint8> _layerIndex;
 };
 

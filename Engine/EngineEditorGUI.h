@@ -5,6 +5,7 @@
 #include <d3d12.h>
 #include <dxgi1_4.h>
 #include <tchar.h>
+#include "EngineString.h"
 
 #ifdef _DEBUG
 #define DX12_ENABLE_DEBUG_LAYER
@@ -24,8 +25,11 @@ struct FrameContext
 
 // 설명 :
 class Scene;
+class UEngineEditorWindow;
 class UEngineEditorGUI
 {
+	friend UEngineEditorWindow;
+
 public:
 	// constrcuter destructer
 	UEngineEditorGUI();
@@ -39,6 +43,24 @@ public:
 	static void GUIRender(Scene* _scene, float _DeltaTime);
 	static void GUIInit();
 	static void GUIRelease();
+	static void WindowInit(std::shared_ptr<UEngineEditorWindow> _Window, std::string_view _Name);
+
+	template<typename EditorWindowType>
+	static std::shared_ptr<EditorWindowType> CreateEditorWindow(std::string_view _Name)
+	{
+		std::string UpperName = UEngineString::ToUpper(_Name);
+
+		if (true == EditorWindows.contains(UpperName))
+		{
+			//MsgBoxAssert("같은 이름의 window는 2개 만들수 없습니다.");
+			return nullptr;
+		}
+
+		std::shared_ptr<UEngineEditorWindow> Windows = std::make_shared<EditorWindowType>();
+		WindowInit(Windows, _Name);
+		EditorWindows[UpperName] = Windows;
+		return std::dynamic_pointer_cast<EditorWindowType>(Windows);
+	}
 
 protected:
 
