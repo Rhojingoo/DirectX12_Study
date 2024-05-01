@@ -75,7 +75,7 @@ void TestPlay_Scene::Awake()
 		camera->AddComponent(make_shared<Camera>()); // Near=1, Far=1000, FOV=45µµ
 		camera->AddComponent(make_shared<TestCameraScript>());
 		camera->GetCamera()->SetFar(10000.f);
-		camera->GetTransform()->SetLocalPosition(Vec3(0.f, 150.f, 0.f));
+		camera->GetTransform()->SetLocalPosition(Vec3(0.f, 250.f, 0.f));
 		uint8 layerIndex = LayerNameToIndex(L"UI");
 		camera->GetCamera()->SetCullingMaskLayerOnOff(layerIndex, true); // UI´Â ¾È ÂïÀ½
 		AddGameObject(camera);
@@ -108,26 +108,26 @@ void TestPlay_Scene::Awake()
 
 #pragma region Object
 	{
-		/*shared_ptr<GameObject> obj = make_shared<GameObject>();
-		obj->SetName(L"OBJ");
-		obj->AddComponent(make_shared<Transform>());
-		obj->AddComponent(make_shared<SphereCollider>());
-		obj->GetTransform()->SetLocalScale(Vec3(100.f, 100.f, 100.f));
-		obj->GetTransform()->SetLocalPosition(Vec3(0, 0.f, 500.f));
-		obj->SetStatic(false);
-		shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
-		{
-			shared_ptr<Mesh> sphereMesh = GET_SINGLE(Resources)->LoadSphereMesh();
-			meshRenderer->SetMesh(sphereMesh);
-		}
-		{
-			shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject");
-			meshRenderer->SetMaterial(material->Clone());
-		}
-		dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetRadius(0.5f);
-		dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetCenter(Vec3(0.f, 0.f, 0.f));
-		obj->AddComponent(meshRenderer);
-		AddGameObject(obj);*/
+		//shared_ptr<GameObject> obj = make_shared<GameObject>();
+		//obj->SetName(L"OBJ");
+		//obj->AddComponent(make_shared<Transform>());
+		//obj->AddComponent(make_shared<SphereCollider>());
+		//obj->GetTransform()->SetLocalScale(Vec3(100.f, 100.f, 100.f));
+		//obj->GetTransform()->SetLocalPosition(Vec3(0, 150.f, 500.f));
+		//obj->SetStatic(false);
+		//shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
+		//{
+		//	shared_ptr<Mesh> sphereMesh = GET_SINGLE(Resources)->LoadSphereMesh();
+		//	meshRenderer->SetMesh(sphereMesh);
+		//}
+		//{
+		//	shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject_Hole");
+		//	meshRenderer->SetMaterial(material->Clone());
+		//}
+		//dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetRadius(0.5f);
+		//dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetCenter(Vec3(0.f, 0.f, 0.f));
+		//obj->AddComponent(meshRenderer);
+		//AddGameObject(obj);
 	}
 #pragma endregion
 
@@ -141,7 +141,7 @@ void TestPlay_Scene::Awake()
 		//obj->AddComponent(make_shared<Transform>());
 		//obj->AddComponent(make_shared<SphereCollider>());
 		//obj->GetTransform()->SetLocalScale(Vec3(100.f, 100.f, 100.f));
-		//obj->GetTransform()->SetLocalPosition(Vec3(100.f, 0.f, 500.f));
+		//obj->GetTransform()->SetLocalPosition(Vec3(100.f, 150.f, 500.f));
 		//obj->SetStatic(false);
 		//shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
 		//{
@@ -149,7 +149,7 @@ void TestPlay_Scene::Awake()
 		//	meshRenderer->SetMesh(QUBEMesh);
 		//}
 		//{
-		//	shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject");
+		//	shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject_Substance");
 		//	meshRenderer->SetMaterial(material->Clone());
 		//}
 		//dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetRadius(0.5f);
@@ -157,6 +157,32 @@ void TestPlay_Scene::Awake()
 		//obj->AddComponent(meshRenderer);
 		//AddGameObject(obj);
 	}
+#pragma endregion
+
+
+
+#pragma region Object_instancing
+	//for (int32 i = 0; i < 50; i++)
+	//{
+	//	shared_ptr<GameObject> obj = make_shared<GameObject>();
+	//	obj->AddComponent(make_shared<Transform>());
+	//	obj->GetTransform()->SetLocalScale(Vec3(25.f, 25.f, 25.f));
+	//	obj->GetTransform()->SetLocalPosition(Vec3(-300.f + i * 10.f, 200.f, 500.f));
+	//	shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
+	//	{
+	//		shared_ptr<Mesh> sphereMesh = GET_SINGLE(Resources)->LoadSphereMesh();
+	//		meshRenderer->SetMesh(sphereMesh);
+	//	}
+	//	{
+	//		shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject_Wood");
+	//		material->SetInt(0, 1);
+	//		meshRenderer->SetMaterial(material);
+	//	//material->SetInt(0, 0);
+	//	//meshRenderer->SetMaterial(material->Clone());
+	//	}
+	//	obj->AddComponent(meshRenderer);
+	//	AddGameObject(obj);
+	//}
 #pragma endregion
 
 
@@ -181,22 +207,22 @@ void TestPlay_Scene::Awake()
 
 #pragma region Object
 	{
-		shared_ptr<GameObject> obj = make_shared<GameObject>();
-		obj->AddComponent(make_shared<Transform>());
-		obj->GetTransform()->SetLocalScale(Vec3(100.f, 100.f, 100.f));
-		obj->GetTransform()->SetLocalPosition(Vec3(0, 150.f, 500.f));
-		obj->SetStatic(false);
-		shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
-		{
-			shared_ptr<Mesh> sphereMesh = GET_SINGLE(Resources)->LoadSphereMesh();
-			meshRenderer->SetMesh(sphereMesh);
-		}
-		{
-			shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject");
-			meshRenderer->SetMaterial(material->Clone());
-		}
-		obj->AddComponent(meshRenderer);
-		AddGameObject(obj);
+		//shared_ptr<GameObject> obj = make_shared<GameObject>();
+		//obj->AddComponent(make_shared<Transform>());
+		//obj->GetTransform()->SetLocalScale(Vec3(100.f, 100.f, 100.f));
+		//obj->GetTransform()->SetLocalPosition(Vec3(0, 150.f, 500.f));
+		//obj->SetStatic(false);
+		//shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
+		//{
+		//	shared_ptr<Mesh> sphereMesh = GET_SINGLE(Resources)->LoadSphereMesh();
+		//	meshRenderer->SetMesh(sphereMesh);
+		//}
+		//{
+		//	shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject_Wood");
+		//	meshRenderer->SetMaterial(material->Clone());
+		//}
+		//obj->AddComponent(meshRenderer);
+		//AddGameObject(obj);
 	}
 #pragma endregion
 
@@ -212,8 +238,8 @@ void TestPlay_Scene::Awake()
 	{
 		shared_ptr<GameObject> obj = make_shared<GameObject>();
 		obj->AddComponent(make_shared<Transform>());
-		obj->GetTransform()->SetLocalScale(Vec3(3000.f, 50.f, 3000.f));
-		obj->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 500.f));
+		obj->GetTransform()->SetLocalScale(Vec3(7000.f, 50.f, 7000.f));
+		obj->GetTransform()->SetLocalPosition(Vec3(0.f, -150.f, 500.f));
 		obj->SetStatic(true);
 		shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
 		{
@@ -221,7 +247,7 @@ void TestPlay_Scene::Awake()
 			meshRenderer->SetMesh(mesh);
 		}
 		{
-			shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject")->Clone();
+			shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject_Leather")->Clone();
 			material->SetInt(0, 0);
 			meshRenderer->SetMaterial(material);
 		}
@@ -268,10 +294,9 @@ void TestPlay_Scene::Awake()
 
 
 
-
 #pragma region Directional Light
 	{
-		shared_ptr<GameObject> light = make_shared<GameObject>();
+		shared_ptr<Direction_Light> light = make_shared<Direction_Light>();
 		light->AddComponent(make_shared<Transform>());
 		light->GetTransform()->SetLocalPosition(Vec3(0, 1000, 500));
 		light->AddComponent(make_shared<Light>());
@@ -280,25 +305,7 @@ void TestPlay_Scene::Awake()
 		light->GetLight()->SetDiffuse(Vec3(1.f, 1.f, 1.f));
 		light->GetLight()->SetAmbient(Vec3(0.1f, 0.1f, 0.1f));
 		light->GetLight()->SetSpecular(Vec3(0.1f, 0.1f, 0.1f));
-
 		AddGameObject(light);
-	}
-#pragma endregion
-
-
-#pragma region Directional Light
-	{
-		//shared_ptr<Direction_Light> light = make_shared<Direction_Light>();
-		//light->AddComponent(make_shared<Light>());
-		////light->AddComponent(make_shared<Transform>());
-		////light->GetTransform()->SetLocalPosition(Vec3(0, 1000, 500));
-		////light->AddComponent(make_shared<Light>());
-		////light->GetLight()->SetLightDirection(Vec3(0, -1, 0.f));
-		////light->GetLight()->SetLightType(LIGHT_TYPE::DIRECTIONAL_LIGHT);
-		////light->GetLight()->SetDiffuse(Vec3(1.f, 1.f, 1.f));
-		////light->GetLight()->SetAmbient(Vec3(0.1f, 0.1f, 0.1f));
-		////light->GetLight()->SetSpecular(Vec3(0.1f, 0.1f, 0.1f));
-		//AddGameObject(light);
 	}
 #pragma endregion
 }

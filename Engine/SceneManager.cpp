@@ -12,7 +12,7 @@
 #include "MeshData.h"
 #include "BaseCollider.h"
 
-
+shared_ptr<Scene> SceneManager::_activeScene=nullptr;
 
 void SceneManager::Init()
 {

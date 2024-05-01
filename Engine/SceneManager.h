@@ -19,7 +19,7 @@ public:
 	shared_ptr<Scene> GetActiveScene() { return _activeScene; }
 
 private:
-	shared_ptr<Scene> _activeScene;
+	static shared_ptr<Scene> _activeScene;
 	shared_ptr<TestPlay_Scene> TestPlay;
 
 

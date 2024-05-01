@@ -31,35 +31,42 @@ Direction_Light::~Direction_Light()
 
 void Direction_Light::Awake()
 {
-	AddComponent(make_shared<Transform>());
-	GetTransform()->SetLocalPosition(Vec3(0, 1000, 500));
-	AddComponent(make_shared<Light>());
-	GetLight()->SetLightDirection(DirectionLight);
-	GetLight()->SetLightType(LIGHT_TYPE::DIRECTIONAL_LIGHT);
-	GetLight()->SetDiffuse(Diffuse);
-	GetLight()->SetAmbient(Ambient);
-	GetLight()->SetSpecular(Specular);
+	//AddComponent(make_shared<Transform>());
+	//GetTransform()->SetLocalPosition(Vec3(0, 1000, 500));
+	//AddComponent(make_shared<Light>());
+	//GetLight()->SetLightDirection(DirectionLight);
+	//GetLight()->SetLightType(LIGHT_TYPE::DIRECTIONAL_LIGHT);
+	//GetLight()->SetDiffuse(Diffuse);
+	//GetLight()->SetAmbient(Ambient);
+	//GetLight()->SetSpecular(Specular);
 	UEngineEditorGUI::CreateEditorWindow<Direction_Light>("Direction_Light_Setter");
+	GameObject::Awake();
 }
 
 void Direction_Light::Start()
 {
+	GameObject::Start();
 }
 
 void Direction_Light::Update()
 {
+	GameObject::Update();
 }
 
 void Direction_Light::LateUpdate()
 {
-	GetLight()->SetLightDirection(DirectionLight);
+	GameObject::LateUpdate();
+
+	//GetLight()->SetLightDirection(DirectionLight);
 	GetLight()->SetDiffuse(Diffuse);
 	GetLight()->SetAmbient(Ambient);
 	GetLight()->SetSpecular(Specular);
 }
 
+
 void Direction_Light::FinalUpdate()
 {
+	GameObject::FinalUpdate();
 }
 
 
@@ -89,10 +96,10 @@ void Direction_Light::OnGui(Scene* _scene, float _Delta)
 	
 
 
-	//if (true == ImGui::Button("No"))
-	//{
-	//	//Animation_Indext = 0;
-	//	//ChangeAniMation = true;
-	//}
+	if (true == ImGui::Button("No"))
+	{
+		//Animation_Indext = 0;
+		//ChangeAniMation = true;
+	}
 
 }

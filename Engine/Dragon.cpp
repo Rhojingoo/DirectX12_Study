@@ -40,6 +40,7 @@ void Dragon::Awake()
 		gameObject->GetTransform()->SetLocalScale(Vec3(1.f, 1.f, 1.f));
 		GET_SINGLE(SceneManager)->GetActiveScene()->AddGameObject(gameObject);
 		gameObject->AddComponent(make_shared<TestDragon>());
+		gameObject->SetStatic(false);
 	}
 	UEngineEditorGUI::CreateEditorWindow<TestDragon>("Dragon_Animation");
 }
