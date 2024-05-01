@@ -2,6 +2,14 @@
 #include "TestDragon.h"
 #include "Input.h"
 #include "Animator.h"
+#include "ParticleOBJ.h"
+#include "ParticleSystem.h"
+#include "Transform.h"
+#include "SceneManager.h"
+#include "Scene.h"
+#include "GameObject.h"
+
+
 bool TestDragon::ChangeAniMation = false;
 int32 TestDragon::Animation_Indext = 0;
 
@@ -60,5 +68,21 @@ void TestDragon::OnGui(Scene* Level, float _Delta)
 	{
 		Animation_Indext = 3;
 		ChangeAniMation = true;
+	}
+
+	if (true == ImGui::Button("Particl_Create"))
+	{
+		particle = make_shared<ParticleOBJ>();
+		particle->AddComponent(make_shared<Transform>());
+		particle->AddComponent(make_shared<ParticleSystem>());
+		particle->SetCheckFrustum(false);
+		particle->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 100.f));
+		GET_SINGLE(SceneManager)->GetActiveScene()->AddGameObject(particle);
+	}
+
+	if (true == ImGui::Button("Particl_Destroy"))
+	{
+		GET_SINGLE(SceneManager)->GetActiveScene()->RemoveGameObject(particle);
+		//GEngine->ChangeLevel("TestLevel");
 	}
 }

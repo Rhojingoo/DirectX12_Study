@@ -2,6 +2,7 @@
 #include "MonoBehaviour.h"
 #include "EngineEditorWindow.h"
 
+class ParticleOBJ;
 class TestDragon : public MonoBehaviour, public UEngineEditorWindow
 {
 public:
@@ -12,5 +13,6 @@ public:
 	static int32 Animation_Indext;
 	static bool ChangeAniMation;;
 
+	shared_ptr<ParticleOBJ> particle;
 };
 

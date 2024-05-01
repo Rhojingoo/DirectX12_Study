@@ -1,5 +1,12 @@
 #include "pch.h"
 #include "ContentsGUI.h"
+#include "SceneManager.h"
+#include "Scene.h"
+#include "GameObject.h"
+#include "ParticleOBJ.h"
+#include "ParticleSystem.h"
+#include "Transform.h"
+
 
 ContentsGUI::ContentsGUI() 
 {
@@ -38,13 +45,19 @@ void ContentsGUI::OnGui(Scene* Level, float _Delta)
     }
 
 
-	if (true == ImGui::Button("TitleLevel"))
-	{
-		//GEngine->ChangeLevel("TitleLevel");
-	}
+	//if (true == ImGui::Button("Particl_Create"))
+	//{
+ //       particle = make_shared<ParticleOBJ>();
+ //       particle->AddComponent(make_shared<Transform>());
+ //       particle->AddComponent(make_shared<ParticleSystem>());
+ //       particle->SetCheckFrustum(false);
+ //       particle->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 100.f));
+ //       GET_SINGLE(SceneManager)->GetActiveScene()->AddGameObject(particle);
+	//}
 
-	if (true == ImGui::Button("TestLevel"))
-	{
-		//GEngine->ChangeLevel("TestLevel");
-	}
+	//if (true == ImGui::Button("Particl_Destroy"))
+	//{
+ //       GET_SINGLE(SceneManager)->GetActiveScene()->RemoveGameObject(particle);
+	//	//GEngine->ChangeLevel("TestLevel");
+	//}
 }

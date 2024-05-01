@@ -104,9 +104,11 @@ void TestPlay_Scene::Awake()
 	}
 #pragma endregion
 
+
+
 #pragma region Object
-	/*{
-		shared_ptr<GameObject> obj = make_shared<GameObject>();
+	{
+		/*shared_ptr<GameObject> obj = make_shared<GameObject>();
 		obj->SetName(L"OBJ");
 		obj->AddComponent(make_shared<Transform>());
 		obj->AddComponent(make_shared<SphereCollider>());
@@ -125,9 +127,38 @@ void TestPlay_Scene::Awake()
 		dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetRadius(0.5f);
 		dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetCenter(Vec3(0.f, 0.f, 0.f));
 		obj->AddComponent(meshRenderer);
-		scene->AddGameObject(obj);
-	}*/
+		AddGameObject(obj);*/
+	}
 #pragma endregion
+
+
+
+
+#pragma region Object
+	{
+		shared_ptr<GameObject> obj = make_shared<GameObject>();
+		obj->SetName(L"OBJ");
+		obj->AddComponent(make_shared<Transform>());
+		obj->AddComponent(make_shared<SphereCollider>());
+		obj->GetTransform()->SetLocalScale(Vec3(100.f, 100.f, 100.f));
+		obj->GetTransform()->SetLocalPosition(Vec3(100.f, 0.f, 500.f));
+		obj->SetStatic(false);
+		shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
+		{
+			shared_ptr<Mesh> QUBEMesh = GET_SINGLE(Resources)->LoadCubeMesh();
+			meshRenderer->SetMesh(QUBEMesh);
+		}
+		{
+			shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject");
+			meshRenderer->SetMaterial(material->Clone());
+		}
+		dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetRadius(0.5f);
+		dynamic_pointer_cast<SphereCollider>(obj->GetCollider())->SetCenter(Vec3(0.f, 0.f, 0.f));
+		obj->AddComponent(meshRenderer);
+		AddGameObject(obj);
+	}
+#pragma endregion
+
 
 #pragma region Terrain
 	/*{
@@ -180,37 +211,33 @@ void TestPlay_Scene::Awake()
 	}
 #pragma endregion
 
-#pragma region ParticleSystem
+#pragma region Directional Light
 	{
-		shared_ptr<ParticleOBJ> particle = make_shared<ParticleOBJ>();
-		particle->AddComponent(make_shared<Transform>());
-		particle->AddComponent(make_shared<ParticleSystem>());
-		particle->SetCheckFrustum(false);
-		particle->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 100.f));
-		AddGameObject(particle);
+		shared_ptr<Direction_Light> light = make_shared<Direction_Light>();
+		AddGameObject(light);
 	}
 #pragma endregion
 
 
 #pragma region Plane(Shdow_Mapping_Ground(그림자뛰우기위한 물체))
 	{
-		//shared_ptr<GameObject> obj = make_shared<GameObject>();
-		//obj->AddComponent(make_shared<Transform>());
-		//obj->GetTransform()->SetLocalScale(Vec3(1000.f, 1.f, 1000.f));
-		//obj->GetTransform()->SetLocalPosition(Vec3(0.f, -100.f, 500.f));
-		//obj->SetStatic(true);
-		//shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
-		//{
-		//	shared_ptr<Mesh> mesh = GET_SINGLE(Resources)->LoadCubeMesh();
-		//	meshRenderer->SetMesh(mesh);
-		//}
-		//{
-		//	shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject")->Clone();
-		//	material->SetInt(0, 0);
-		//	meshRenderer->SetMaterial(material);
-		//}
-		//obj->AddComponent(meshRenderer);
-		//AddGameObject(eLayerType::Player, obj);
+		shared_ptr<GameObject> obj = make_shared<GameObject>();
+		obj->AddComponent(make_shared<Transform>());
+		obj->GetTransform()->SetLocalScale(Vec3(1000.f, 1.f, 1000.f));
+		obj->GetTransform()->SetLocalPosition(Vec3(0.f, -100.f, 500.f));
+		obj->SetStatic(true);
+		shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
+		{
+			shared_ptr<Mesh> mesh = GET_SINGLE(Resources)->LoadCubeMesh();
+			meshRenderer->SetMesh(mesh);
+		}
+		{
+			shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject")->Clone();
+			material->SetInt(0, 0);
+			meshRenderer->SetMaterial(material);
+		}
+		obj->AddComponent(meshRenderer);
+		AddGameObject(obj);
 	}
 #pragma endregion
 
@@ -218,21 +245,14 @@ void TestPlay_Scene::Awake()
 
 
 
-#pragma region Directional Light
-	{
-		shared_ptr<Direction_Light> light = make_shared<Direction_Light>();
-		AddGameObject(light);		
-	}
-#pragma endregion
+
 
 #pragma region FBX
 	{
-		shared_ptr<Dragon> BlackDragon = make_shared<Dragon>();
-		BlackDragon->Awake();
+		//shared_ptr<Dragon> BlackDragon = make_shared<Dragon>();
+		//BlackDragon->Awake();
 	}
-#pragma endregion
-
-	
+#pragma endregion	
 }
 
 void TestPlay_Scene::Start()

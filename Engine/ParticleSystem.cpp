@@ -43,6 +43,7 @@ void ParticleSystem::FinalUpdate()
 	_particleBuffer->PushComputeUAVData(UAV_REGISTER::u0);
 	_computeSharedBuffer->PushComputeUAVData(UAV_REGISTER::u1);
 
+
 	_computeMaterial->SetInt(0, _maxParticle);
 	_computeMaterial->SetInt(1, add);
 
