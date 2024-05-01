@@ -36,7 +36,7 @@ void Dragon::Awake()
 	{
 		gameObject->SetName(L"Dragon");
 		gameObject->SetCheckFrustum(false);
-		gameObject->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 300.f));
+		gameObject->GetTransform()->SetLocalPosition(Vec3(0.f, 150.f, 300.f));
 		gameObject->GetTransform()->SetLocalScale(Vec3(1.f, 1.f, 1.f));
 		GET_SINGLE(SceneManager)->GetActiveScene()->AddGameObject(gameObject);
 		gameObject->AddComponent(make_shared<TestDragon>());

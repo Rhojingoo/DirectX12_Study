@@ -89,10 +89,10 @@ void Direction_Light::OnGui(Scene* _scene, float _Delta)
 	
 
 
-	if (true == ImGui::Button("No"))
-	{
-		//Animation_Indext = 0;
-		//ChangeAniMation = true;
-	}
+	//if (true == ImGui::Button("No"))
+	//{
+	//	//Animation_Indext = 0;
+	//	//ChangeAniMation = true;
+	//}
 
 }

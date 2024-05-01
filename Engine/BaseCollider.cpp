@@ -4,7 +4,7 @@
 BaseCollider::BaseCollider(ColliderType colliderType)
 	: Component(COMPONENT_TYPE::COLLIDER), _colliderType(colliderType)
 {
-
+	int a = 0;
 }
 
 BaseCollider::~BaseCollider()
