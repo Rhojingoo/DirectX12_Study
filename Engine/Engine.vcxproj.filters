@@ -79,6 +79,12 @@
     <Filter Include="Object\OBJ\Light_Direction">
       <UniqueIdentifier>{27e2dbed-7cc2-495b-8194-9d2194de3c1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\OBJ\ParticlOBJ">
+      <UniqueIdentifier>{d503fbbc-137c-46ea-b41e-874710680f67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\OBJ\Instancing">
+      <UniqueIdentifier>{f399ea35-b7cc-4ed2-8650-a15324d0fa92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -250,6 +256,9 @@
       <Filter>Object\OBJ\Light_Direction</Filter>
     </ClCompile>
     <ClCompile Include="ContentsGUI.cpp" />
+    <ClCompile Include="ParticleOBJ.cpp">
+      <Filter>Object\OBJ\ParticlOBJ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -427,6 +436,9 @@
       <Filter>Object\OBJ\Light_Direction</Filter>
     </ClInclude>
     <ClInclude Include="ContentsGUI.h" />
+    <ClInclude Include="ParticleOBJ.h">
+      <Filter>Object\OBJ\ParticlOBJ</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Resources\Shader\params.fx">

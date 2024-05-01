@@ -15,7 +15,7 @@
 #include "Terrain.h"
 #include "SphereCollider.h"
 
-
+#include "ParticleOBJ.h"
 #include "TestDragon.h"
 #include "Dragon.h"
 #include "SkyBox.h"
@@ -23,6 +23,7 @@
 #include "TestCameraScript.h"
 #include "EngineEditorGUI.h"
 #include "ContentsGUI.h"
+
 
 TestPlay_Scene::TestPlay_Scene()
 {
@@ -178,6 +179,44 @@ void TestPlay_Scene::Awake()
 		AddGameObject(obj);
 	}
 #pragma endregion
+
+#pragma region ParticleSystem
+	{
+		shared_ptr<ParticleOBJ> particle = make_shared<ParticleOBJ>();
+		particle->AddComponent(make_shared<Transform>());
+		particle->AddComponent(make_shared<ParticleSystem>());
+		particle->SetCheckFrustum(false);
+		particle->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 100.f));
+		AddGameObject(particle);
+	}
+#pragma endregion
+
+
+#pragma region Plane(Shdow_Mapping_Ground(그림자뛰우기위한 물체))
+	{
+		//shared_ptr<GameObject> obj = make_shared<GameObject>();
+		//obj->AddComponent(make_shared<Transform>());
+		//obj->GetTransform()->SetLocalScale(Vec3(1000.f, 1.f, 1000.f));
+		//obj->GetTransform()->SetLocalPosition(Vec3(0.f, -100.f, 500.f));
+		//obj->SetStatic(true);
+		//shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
+		//{
+		//	shared_ptr<Mesh> mesh = GET_SINGLE(Resources)->LoadCubeMesh();
+		//	meshRenderer->SetMesh(mesh);
+		//}
+		//{
+		//	shared_ptr<Material> material = GET_SINGLE(Resources)->Get<Material>(L"GameObject")->Clone();
+		//	material->SetInt(0, 0);
+		//	meshRenderer->SetMaterial(material);
+		//}
+		//obj->AddComponent(meshRenderer);
+		//AddGameObject(eLayerType::Player, obj);
+	}
+#pragma endregion
+
+
+
+
 
 #pragma region Directional Light
 	{

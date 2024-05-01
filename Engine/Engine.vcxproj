@@ -212,6 +212,10 @@
     <ClInclude Include="MonoBehaviour.h" />
     <ClInclude Include="NameObject.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ParticleOBJ.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RenderTargetGroup.h" />
@@ -280,6 +284,10 @@
     <ClCompile Include="MonoBehaviour.cpp" />
     <ClCompile Include="NameObject.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ParticleOBJ.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

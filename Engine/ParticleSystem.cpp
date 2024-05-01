@@ -5,6 +5,7 @@
 #include "Resources.h"
 #include "Transform.h"
 #include "Timer.h"
+#include "Input.h"
 
 ParticleSystem::ParticleSystem() : Component(COMPONENT_TYPE::PARTICLE_SYSTEM)
 {
@@ -17,7 +18,7 @@ ParticleSystem::ParticleSystem() : Component(COMPONENT_TYPE::PARTICLE_SYSTEM)
 	_mesh = GET_SINGLE(Resources)->LoadPointMesh();
 	_material = GET_SINGLE(Resources)->Get<Material>(L"Particle");
 	shared_ptr<Texture> tex = GET_SINGLE(Resources)->Load<Texture>(
-		L"Bubbles", L"..\\Resources\\Texture\\Particle\\bubble.png");
+		L"ParticleS", L"..\\Resources\\Texture\\Particle\\Fireball.png");
 
 	_material->SetTexture(0, tex);
 

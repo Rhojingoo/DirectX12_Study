@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "EngineEditorWindow.h"
 
 class Material;
 class Mesh;
@@ -31,6 +32,7 @@ public:
 	virtual void FinalUpdate();
 	void Render();
 
+
 public:
 	virtual void Load(const wstring& path) override { }
 	virtual void Save(const wstring& path) override { }
@@ -53,4 +55,5 @@ private:
 	float				_maxSpeed = 50;
 	float				_startScale = 10.f;
 	float				_endScale = 5.f;
+	bool _change = false;
 };
