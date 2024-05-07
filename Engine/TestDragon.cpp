@@ -76,7 +76,7 @@ void TestDragon::OnGui(Scene* Level, float _Delta)
 		particle->AddComponent(make_shared<Transform>());
 		particle->AddComponent(make_shared<ParticleSystem>());
 		particle->SetCheckFrustum(false);
-		particle->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 100.f));
+		particle->GetTransform()->SetLocalPosition(Vec3(0.f, 150.f, 100.f));
 		GET_SINGLE(SceneManager)->GetActiveScene()->AddGameObject(particle);
 	}
 

@@ -75,7 +75,7 @@ void TestPlay_Scene::Awake()
 		camera->AddComponent(make_shared<Camera>()); // Near=1, Far=1000, FOV=45µµ
 		camera->AddComponent(make_shared<TestCameraScript>());
 		camera->GetCamera()->SetFar(10000.f);
-		camera->GetTransform()->SetLocalPosition(Vec3(0.f, 250.f, 0.f));
+		camera->GetTransform()->SetLocalPosition(Vec3(0.f, 150.f, 0.f));
 		uint8 layerIndex = LayerNameToIndex(L"UI");
 		camera->GetCamera()->SetCullingMaskLayerOnOff(layerIndex, true); // UI´Â ¾È ÂïÀ½
 		AddGameObject(camera);
@@ -228,8 +228,8 @@ void TestPlay_Scene::Awake()
 
 #pragma region FBX
 	{
-		//shared_ptr<Dragon> BlackDragon = make_shared<Dragon>();
-		//BlackDragon->Awake();
+		shared_ptr<Dragon> BlackDragon = make_shared<Dragon>();
+		BlackDragon->Awake();
 	}
 #pragma endregion	
 
@@ -239,7 +239,7 @@ void TestPlay_Scene::Awake()
 		shared_ptr<GameObject> obj = make_shared<GameObject>();
 		obj->AddComponent(make_shared<Transform>());
 		obj->GetTransform()->SetLocalScale(Vec3(7000.f, 50.f, 7000.f));
-		obj->GetTransform()->SetLocalPosition(Vec3(0.f, -150.f, 500.f));
+		obj->GetTransform()->SetLocalPosition(Vec3(0.f, -250.f, 500.f));
 		obj->SetStatic(true);
 		shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
 		{
