@@ -203,7 +203,7 @@ void Mesh::CreateBonesAndAnimations(class FBXLoader& loader)
 #pragma region SkinData
 	if (IsAnimMesh())
 	{
-		// BoneOffet 행렬
+		// BoneOffset 행렬
 		const int32 boneCount = static_cast<int32>(_bones.size());
 		vector<Matrix> offsetVec(boneCount);
 		for (size_t b = 0; b < boneCount; b++)
@@ -219,22 +219,29 @@ void Mesh::CreateBonesAndAnimations(class FBXLoader& loader)
 			AnimClipInfo& animClip = _animClips[i];
 
 			// 애니메이션 프레임 정보
-			vector<AnimFrameParams> frameParams;
-			frameParams.resize(_bones.size() * animClip.frameCount);
+			int32 maxFrames = 0;
+			for (const auto& keyFrames : animClip.keyFrames)
+				maxFrames = max(maxFrames, static_cast<int32>(keyFrames.size()));
+
+			int32 totalFrames = boneCount * maxFrames;
+			vector<AnimFrameParams> frameParams(totalFrames);
 
 			for (int32 b = 0; b < boneCount; b++)
 			{
 				const int32 keyFrameCount = static_cast<int32>(animClip.keyFrames[b].size());
 				for (int32 f = 0; f < keyFrameCount; f++)
 				{
-					int32 idx = static_cast<int32>(boneCount * f + b);
+					int32 idx = boneCount * f + b;
 
-					frameParams[idx] = AnimFrameParams
-					{
-						Vec4(animClip.keyFrames[b][f].scale),
-						animClip.keyFrames[b][f].rotation, // Quaternion
-						Vec4(animClip.keyFrames[b][f].translate)
-					};
+					// 안전한 벡터 접근 확인
+					if (idx >= 0 && idx < totalFrames) {
+						frameParams[idx] = AnimFrameParams
+						{
+							Vec4(animClip.keyFrames[b][f].scale),
+							animClip.keyFrames[b][f].rotation, // Quaternion
+							Vec4(animClip.keyFrames[b][f].translate)
+						};
+					}
 				}
 			}
 
@@ -244,6 +251,7 @@ void Mesh::CreateBonesAndAnimations(class FBXLoader& loader)
 		}
 	}
 #pragma endregion
+
 }
 
 Matrix Mesh::GetMatrix(FbxAMatrix& matrix)

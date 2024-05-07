@@ -61,7 +61,7 @@ void TestPlay_Scene::Awake()
 		GEngine->GetComputeDescHeap()->SetUAV(texture->GetUAVHandle(), UAV_REGISTER::u0);
 
 		// 쓰레드 그룹 (1 * 1024 * 1)
-		material->Dispatch(1, 1024, 1);
+		material->Dispatch(1024, 1024, 1);
 	}
 #pragma endregion
 

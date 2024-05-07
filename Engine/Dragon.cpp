@@ -30,7 +30,8 @@ Dragon::~Dragon()
 
 void Dragon::Awake()
 {
-	shared_ptr<MeshData> meshData = GET_SINGLE(Resources)->LoadFBX(L"..\\Resources\\FBX\\Dragon.fbx");
+	shared_ptr<MeshData> meshData = GET_SINGLE(Resources)->LoadFBX(L"..\\Resources\\FBX\\2B_Idle.fbx");
+	//shared_ptr<MeshData> meshData = GET_SINGLE(Resources)->LoadFBX(L"..\\Resources\\FBX\\Dragon.fbx");
 	vector<shared_ptr<GameObject>> gameObjects = meshData->Instantiate();
 	for (auto& gameObject : gameObjects)
 	{
