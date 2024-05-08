@@ -181,6 +181,12 @@
     <PreBuildEvent>
       <Command>CALL "..\unzip_fbx_Debug.bat" &amp; CALL "..\unzip_fbx_Release.bat"</Command>
     </PreBuildEvent>
+    <FxCompile>
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="2B_PL.h">
