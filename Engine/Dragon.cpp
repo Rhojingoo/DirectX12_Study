@@ -32,6 +32,21 @@ void Dragon::Awake()
 {
 	//shared_ptr<MeshData> meshData = GET_SINGLE(Resources)->LoadFBX(L"..\\Resources\\FBX\\2B_Idle.fbx");
 	shared_ptr<MeshData> meshData = GET_SINGLE(Resources)->LoadFBX(L"..\\Resources\\FBX\\Dragon.fbx");
+
+	//shared_ptr<MeshData> meshData;
+	//std::wstring dataFilePath = L"..\\Resources\\FBX\\DragonMeshData\\DragonMeshData.txt";
+	//meshData = make_shared<MeshData>();
+
+	//// 먼저 저장된 MeshData 파일을 로드하려고 시도
+	//if (!meshData->Load_Meshdata(dataFilePath))
+	//{
+	//	// 파일 로드 실패 시 FBX 파일에서 로드
+	//	meshData = GET_SINGLE(Resources)->LoadFBX(L"..\\Resources\\FBX\\Dragon.fbx");
+	//	// 로드된 데이터를 파일로 저장
+	//	meshData->Save(dataFilePath);
+	//}
+
+
 	vector<shared_ptr<GameObject>> gameObjects = meshData->Instantiate();
 	for (auto& gameObject : gameObjects)
 	{

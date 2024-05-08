@@ -23,8 +23,8 @@ public:
 	static shared_ptr<MeshData> LoadFromFBX(const wstring& path);
 
 	void Load(const wstring& _strFilePath)override;
-	bool Load_Meshdata(const wstring& path) override;
-	void Save(const wstring& path) override;
+	bool Load_Meshdata(const wstring& _strFilePath) override;
+	void Save(const wstring& _strFilePath) override;
 
 	vector<shared_ptr<GameObject>> Instantiate();
 
