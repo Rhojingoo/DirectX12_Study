@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "SceneManager.h"
 #include "Scene.h"
+#include "TestScene.h"
 #include "TestPlay_Scene.h"
 
 
@@ -16,10 +17,10 @@ shared_ptr<Scene> SceneManager::_activeScene=nullptr;
 
 void SceneManager::Init()
 {
-	TestPlay = make_shared<TestPlay_Scene>();
+	Play = make_shared<TestPlay_Scene>();
+	//Test_Scene = make_shared<TestScene>();
 
-
-	GET_SINGLE(SceneManager)->LoadScene(TestPlay);
+	GET_SINGLE(SceneManager)->LoadScene(Play);
 }
 
 void SceneManager::Update()

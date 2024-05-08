@@ -48,18 +48,21 @@ void Dragon::Awake()
 
 void Dragon::Start()
 {
-
+	GameObject::Start();
 }
 
 void Dragon::Update()
 {
+	GameObject::Update();
 }
 
 void Dragon::LateUpdate()
 {
+	GameObject::LateUpdate();
 }
 
 void Dragon::FinalUpdate()
 {
+	GameObject::FinalUpdate();
 }
 

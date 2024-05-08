@@ -85,6 +85,12 @@
     <Filter Include="Object\OBJ\Instancing">
       <UniqueIdentifier>{f399ea35-b7cc-4ed2-8650-a15324d0fa92}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Scene\Test">
+      <UniqueIdentifier>{c9d690b0-3599-47f6-985a-435991327f80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\OBJ\2B">
+      <UniqueIdentifier>{6b8af82d-f167-4e35-9e03-69c2f5313fad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -258,6 +264,12 @@
     <ClCompile Include="ContentsGUI.cpp" />
     <ClCompile Include="ParticleOBJ.cpp">
       <Filter>Object\OBJ\ParticlOBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>Engine\Scene\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="2B_PL.cpp">
+      <Filter>Object\OBJ\2B</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -438,6 +450,12 @@
     <ClInclude Include="ContentsGUI.h" />
     <ClInclude Include="ParticleOBJ.h">
       <Filter>Object\OBJ\ParticlOBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>Engine\Scene\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="2B_PL.h">
+      <Filter>Object\OBJ\2B</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

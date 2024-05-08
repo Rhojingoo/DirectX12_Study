@@ -1,6 +1,7 @@
 #pragma once
 
 class Scene;
+class TestScene;
 class TestPlay_Scene;
 class SceneManager
 {
@@ -20,9 +21,9 @@ public:
 
 private:
 	static shared_ptr<Scene> _activeScene;
-	shared_ptr<TestPlay_Scene> TestPlay;
+	shared_ptr<TestPlay_Scene> Play;
+	shared_ptr<TestScene> Test_Scene;
 
-
-
+	
 };
 

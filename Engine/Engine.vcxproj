@@ -183,6 +183,10 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="2B_PL.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Animator.h" />
     <ClInclude Include="BaseCollider.h" />
     <ClInclude Include="Camera.h" />
@@ -252,11 +256,19 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="2B_PL.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Animator.cpp" />
     <ClCompile Include="BaseCollider.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -326,6 +338,10 @@
     <ClCompile Include="TestCameraScript.cpp" />
     <ClCompile Include="TestDragon.cpp" />
     <ClCompile Include="TestPlay_Scene.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
       <SubType>
       </SubType>
     </ClCompile>
