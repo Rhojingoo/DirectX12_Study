@@ -1,12 +1,19 @@
 #include "pch.h"
 #include "MeshData.h"
-#include "FBXLoader.h"
+//#include "FBXLoader.h"
 #include "Mesh.h"
 #include "Material.h"
 #include "Resources.h"
 #include "Transform.h"
 #include "MeshRenderer.h"
 #include "Animator.h"
+
+
+#include <fstream>
+#include <sstream>
+#include <filesystem>
+namespace fs = std::filesystem;
+
 
 MeshData::MeshData() : Object(OBJECT_TYPE::MESH_DATA)
 {
@@ -49,6 +56,11 @@ shared_ptr<MeshData> MeshData::LoadFromFBX(const wstring& path)
 void MeshData::Load(const wstring& _strFilePath)
 {
 	// TODO
+}
+
+bool MeshData::Load_Meshdata(const wstring& path)
+{
+	return false;
 }
 
 void MeshData::Save(const wstring& _strFilePath)

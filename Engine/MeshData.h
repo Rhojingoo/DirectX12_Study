@@ -1,5 +1,7 @@
 #pragma once
 #include "Object.h"
+#include "FBXLoader.h"
+
 
 class Mesh;
 class Material;
@@ -20,8 +22,9 @@ public:
 public:
 	static shared_ptr<MeshData> LoadFromFBX(const wstring& path);
 
-	virtual void Load(const wstring& path);
-	virtual void Save(const wstring& path);
+	void Load(const wstring& _strFilePath)override;
+	bool Load_Meshdata(const wstring& path) override;
+	void Save(const wstring& path) override;
 
 	vector<shared_ptr<GameObject>> Instantiate();
 
@@ -30,4 +33,5 @@ private:
 	vector<shared_ptr<Material>>	_materials;
 
 	vector<MeshRenderInfo> _meshRenders;
+	static FBXLoader loader;
 };

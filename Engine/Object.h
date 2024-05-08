@@ -37,6 +37,7 @@ public:
 protected:
 	friend class Resources;
 	virtual void Load(const wstring& path) { }
+	virtual bool Load_Meshdata(const wstring& _path) { return false; }
 	virtual void Save(const wstring& path) { }
 
 protected:
