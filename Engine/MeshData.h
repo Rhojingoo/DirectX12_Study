@@ -27,11 +27,11 @@ public:
 	void Save(const wstring& _strFilePath) override;
 
 	vector<shared_ptr<GameObject>> Instantiate();
-
+	static FBXLoader loader;
 private:
 	shared_ptr<Mesh>				_mesh;
 	vector<shared_ptr<Material>>	_materials;
 
 	vector<MeshRenderInfo> _meshRenders;
-	static FBXLoader loader;
+	
 };

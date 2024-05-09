@@ -13,7 +13,7 @@
 #include <sstream>
 #include <filesystem>
 namespace fs = std::filesystem;
-
+FBXLoader MeshData::loader;
 
 MeshData::MeshData() : Object(OBJECT_TYPE::MESH_DATA)
 {
@@ -90,7 +90,7 @@ bool MeshData::Load_Meshdata(const wstring& _strFilePath)
 	//}
 
 	//inFile.close();
-	//return true; // 성공적으로 로드
+	return true; // 성공적으로 로드
 }
 
 void MeshData::Save(const wstring& _strFilePath)
